@@ -1,0 +1,5 @@
+print GUESS THE NUMBER BETWEEN 1 AND 10
+prompt
+print YOU GUESSED <ans>
+print THE NUMBER WAS:
+random 10

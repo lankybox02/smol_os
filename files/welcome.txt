@@ -1,0 +1,52 @@
+WELCOME TO YOUR NEW OS!
+Simply write commands to start working!
+
+~COMMAND LIST~
+TERMINATE
+terminates the OS instance
+
+CLEAR
+clears the commandline
+
+DIAGNOSTICS
+checks for common OS issues
+
+REGEDIT <key> <value>
+sets the registry key to the provided value
+
+DIR <directory>
+shows list of files/dirs in the provided directory. if the directory param is left blank, it will show the root dir
+
+OPEN <file>
+shows the content of the file with the provided path (i.e. open mydir/hey.txt)
+
+DELETE <file>
+deletes the file
+
+WRITE <file>
+writes to a file. if the file doesnt exist, it will create a new one
+
+MKDIR <name>
+makes a directory
+
+RMDIR <name>
+removes a directory (with all of the files)
+
+RUN <file>
+runs a .smol file
+.smol files are basically .exes for smol_os
+
+VER
+returns a cool thingy that shows ur os version
+
+APPEND <file>
+appends text at the end of a file
+
+C <calc>
+performs and returns a calculation (i. e. "c 1+1" returns 2)
+
+and those are all of the commands
+update checks are performed automatically unless disabled from the registry
+____
+you can delete this file or something, idk
+ENJOY YOUR OS!

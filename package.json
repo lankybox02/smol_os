@@ -1,0 +1,12 @@
+{
+  "name": "smol_os",
+  "description": "light-weight, simple command-line operating system",
+  "author": "ari",
+  "type": "module",
+  "dependencies": {
+    "@types/node": "^18.0.6",
+    "edit-json-file": "^1.7.0",
+    "expression-calculator": "^1.0.8",
+    "node-fetch": "^3.2.6"
+  }
+}

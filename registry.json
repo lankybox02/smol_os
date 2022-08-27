@@ -1,0 +1,7 @@
+{
+  "password": false,
+  "skipUpdates": false,
+  "skipTimeout": false,
+  "preventBoot": false,
+  "devWarn": false
+}
