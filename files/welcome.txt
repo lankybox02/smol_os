@@ -44,6 +44,7 @@ returns a cool thingy that shows ur os version
 
 SEARCH <dir>
 searches a directory by keyword
+if the dir param is blank, it will search the root dir
 
 APPEND <file>
 appends text at the end of a file
