@@ -218,7 +218,7 @@ if (com.startsWith('c ')) {
     fs.readdirSync(__dirname + '/files/' + com.slice(7), {withFileTypes: true})
 .filter(item => !item.isDirectory() && item.name.includes(term)).map(item => item.name).forEach(i => {
   list += `
-${i}`
+${i.toUpperCase()}`
 })
     return list.slice(1);
  }
@@ -239,10 +239,12 @@ function updateCheck() {
       if (ver == data) {
         console.log("NO NEW UPDATES");
         start();
-      }else{ver = data;
+      }else{let oldver = ver; ver = data;
 
 
         console.log("NEW UPDATE DETECTED!")
+            console.log(oldver + " => " + ver)
+            if (prompt("TYPE Y TO INSTALL").toLowerCase()=='y'){
         setTimeout(function(){
           console.log("INSTALLING...");
           fetch('https://raw.githubusercontent.com/lankybox02/smol_os/main/index.js')
@@ -267,6 +269,9 @@ console.log("INSTALLATION FINISHED! PLEASE RESTART")
      });
      });
         }, 2000)
+            }else{
+              start();
+            }
       }
     })
 		.catch(err => {
