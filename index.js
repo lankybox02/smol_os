@@ -212,6 +212,18 @@ if (com.startsWith('c ')) {
     return genver();
   }
 
+	if (com.startsWith('search')) {
+    let term = prompt("SEARCH KEYWORD")
+    let list = '';
+    fs.readdirSync(__dirname + '/files/' + com.slice(7), {withFileTypes: true})
+.filter(item => !item.isDirectory() && item.name.includes(term)).map(item => item.name).forEach(i => {
+  list += `
+${i}`
+})
+    return list.slice(1);
+ }
+
+                  
   if (com.trim()=='')return;
   return "BAD COMMAND";
 }

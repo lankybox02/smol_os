@@ -42,6 +42,9 @@ runs a .smol file
 VER
 returns a cool thingy that shows ur os version
 
+SEARCH <dir>
+searches a directory by keyword
+
 APPEND <file>
 appends text at the end of a file
 
