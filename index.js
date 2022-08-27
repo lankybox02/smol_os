@@ -208,17 +208,41 @@ function updateCheck() {
     start();
     return;
   }
-  fetch(url + '/ver')
+  fetch('https://raw.githubusercontent.com/lankybox02/smol_os/main/ver.txt')
  		.then(response => response.text())
  		.then(data => {
       if (ver == data) {
         console.log("NO NEW UPDATES");
-      }else{
+        start();
+      }else{ver = data;
+
+
         console.log("NEW UPDATE DETECTED!")
-        // installation goes here...
-        // DONT OVERWRITE files/
+        setTimeout(function(){
+          console.log("INSTALLING...");
+          fetch('https://raw.githubusercontent.com/lankybox02/smol_os/main/index.js')
+          .then(response => response.text())
+ 		.then(data => {
+      fs.writeFileSync(__dirname + '/index.js', data);
+      console.log("1/5")
+      fetch('https://raw.githubusercontent.com/lankybox02/smol_os/main/registry.json')
+          .then(response => response.text())
+ 		.then(data => {
+      fs.writeFileSync(__dirname + '/registry.json', data);
+      console.log("2/5")
+      fs.writeFileSync(__dirname + '/.logs', `~smol_os error logs~
+
+`);
+      console.log("3/5")
+fs.writeFileSync(__dirname + '/ver.txt', ver);
+      console.log("4/5")
+
+console.log("INSTALLATION FINISHED! PLEASE RESTART")
+      console.log("IF YOU ENCOUNTER ANY PROBLEMS, PLEASE REPORT THEM ON THE GITHUB REPOSITORY")
+     });
+     });
+        }, 2000)
       }
-      start()
     })
 		.catch(err => {
       console.log("FAILED FETCHING UPDATES");
