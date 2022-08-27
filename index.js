@@ -63,6 +63,7 @@ async function run(com) {
     console.clear();
     return;
   }
+  
   if (com == 'diagnostics') {
     diagnostics()
     return;
@@ -222,6 +223,26 @@ ${i.toUpperCase()}`
 })
     return list.slice(1);
  }
+
+  if (com == 'format') {
+    console.log("THIS IS UNDOABLE!")
+    if (prompt('ARE YOU SURE? PRESS Y').toLowerCase() == 'y') {
+      fs.rmSync(__dirname + '/files/', {recursive: true});
+      fs.mkdirSync(__dirname + '/files/', {recursive: true});
+      fetch('https://raw.githubusercontent.com/lankybox02/smol_os/main/registry.json')
+          .then(response => response.text())
+ 		.then(data => {
+      fs.writeFileSync(__dirname + '/registry.json', data);
+      console.log("2/5")
+      fs.writeFileSync(__dirname + '/.logs', `~smol_os error logs~
+
+`);return 'FORMAT SUCCESS';
+     });
+       
+    }else{
+      return 'CANCELLED';
+    }
+  }
 
                   
   if (com.trim()=='')return;

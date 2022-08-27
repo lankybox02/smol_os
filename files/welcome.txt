@@ -52,6 +52,9 @@ appends text at the end of a file
 C <calc>
 performs and returns a calculation (i. e. "c 1+1" returns 2)
 
+FORMAT
+resets the entire os to default
+
 and those are all of the commands
 update checks are performed automatically unless disabled from the registry
 ____
