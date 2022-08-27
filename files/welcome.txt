@@ -32,6 +32,9 @@ makes a directory
 RMDIR <name>
 removes a directory (with all of the files)
 
+RENAME <name>
+renames a file
+
 RUN <file>
 runs a .smol file
 .smol files are basically .exes for smol_os

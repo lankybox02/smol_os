@@ -134,6 +134,19 @@ ${item.toUpperCase()}` + " ".repeat(20 - item.length) + type;
 }
   }
 
+  if (com.startsWith('rename ')) {if (com.includes("..")) return;
+
+    fs.renameSync(__dirname + '/files/' + com.slice(7).toLowerCase(), __dirname + '/files/' + prompt('NEW NAME').toLowerCase());
+    return "FILE WAS RENAMED"
+  }
+
+  if (com.startsWith('copy ')) {
+    if (com.includes("..")) return;
+
+    fs.copyFileSync(__dirname + '/files/' + com.slice(5).toLowerCase(), __dirname + '/files/' + prompt('COPY NAME').toLowerCase());
+    return "FILE WAS COPIED"
+    }
+
   if (com.startsWith('delete ')) {
     if (com.includes("..")) return;
     try {
